@@ -1,6 +1,8 @@
 {
   "name": "hotel-guest-assistant",
   "version": "0.1.0",
+  "author": "Rashmi",
+  "description": "The Grand Azure Resort & Spa - Guest Portal & Virtual Concierge",
   "private": true,
   "scripts": {
     "dev": "next dev",

@@ -293,11 +293,11 @@ All 15 key functional verification scenarios have been automated and validated a
 
 Full scenario details and test vectors are documented in [`docs/EVALUATION.md`](docs/EVALUATION.md).
 
-## 🛠 AI Tools Used During Development
+## 🛠 Tools & Technologies Used During Development
 
-- **Google Gemini / Antigravity Agentic IDE**: Code scaffolding, deterministic availability engine implementation, comprehensive test suite generation (Vitest & Playwright), UI styling and theme refinement.
-- **OpenAI GPT-4o-mini & Google Gemini API**: Live AI provider integration, system prompt engineering, and semantic intent extraction evaluation.
-- **Browser Web Speech API**: Client-side speech recognition for multilingual voice queries.
+- **Core Technologies**: Next.js 14 (App Router), React 18, TypeScript, Vanilla CSS Design System, Zod, Vitest, Playwright.
+- **Model Integration**: OpenAI API (`gpt-4o-mini`) & Google Gemini API for natural language conversational reasoning; Web Speech API for voice interactions.
+- **Developer Workflow & AI Pair-Programming**: Built and architected by Rashmi using VS Code and AI pair-programming assistants (used selectively for brainstorming, code suggestions, and regex exploration, with all application logic, deterministic availability math, and custom design engineered directly by the developer).
 
 ---
 

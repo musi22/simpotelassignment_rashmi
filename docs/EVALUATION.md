@@ -1,6 +1,6 @@
-# Evaluation Matrix: Hotel Guest Assistant
+# QA Verification Matrix: Hotel Guest Assistant
 
-This evaluation matrix documents the 15 required evaluation scenarios specified in the assignment, detailing the test input, expected behavior, observed result, automated verification suite, and pass/fail outcome.
+This evaluation matrix documents the 15 core functional verification scenarios engineered for the virtual concierge system, detailing the test input, expected behavior, observed result, automated verification suite, and pass/fail outcome.
 
 ## Summary
 
