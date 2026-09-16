@@ -6,7 +6,7 @@ import { Mic, MicOff, Volume2 } from 'lucide-react';
 interface VoiceInputProps {
   onTranscript: (text: string) => void;
   disabled?: boolean;
-  language?: 'en' | 'hi' | 'hinglish';
+  language?: 'en' | 'hi';
 }
 
 export const VoiceInput: React.FC<VoiceInputProps> = ({

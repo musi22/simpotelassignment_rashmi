@@ -37,7 +37,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<ApiError | null>(null);
   const [lastFailedMessage, setLastFailedMessage] = useState<string | null>(null);
-  const [language, setLanguage] = useState<'en' | 'hi' | 'hinglish'>('en');
+  const [language, setLanguage] = useState<'en' | 'hi'>('en');
   const [isVoiceModeActive, setIsVoiceModeActive] = useState<boolean>(false);
   const [isMounted, setIsMounted] = useState<boolean>(false);
 
@@ -48,19 +48,49 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
 
-  // Re-greet if language changes
+  // Dynamically switch greetings and conversation language
   useEffect(() => {
-    if (language === 'hi') {
-      setMessages([
+    if (!isMounted) return;
+
+    const englishGreeting = `Namaste & Welcome to ${hotelName}! I'm Meena, your personal guest concierge.\n\nHow could I help you today? I'm here to assist with room recommendations, heated infinity pool timings, dining at Azure Brasserie, or verifying real-time suite availability for your stay.`;
+    const hindiGreeting = `Namaste! ${hotelName} mein aapka swagat hai. Main Meena hoon, aapki personal guest concierge.\n\nMain aapki kya madad kar sakti hoon? Aap mujhse hotel suvidhaon, check-in samay, breakfast, cancellation policies, ya live room availability ke baare mein pooch sakte hain.`;
+
+    setMessages((prev) => {
+      // If only initial greeting is present, seamlessly switch it
+      if (prev.length <= 1) {
+        return [
+          {
+            id: `greeting_${language}`,
+            role: 'assistant',
+            content: language === 'hi' ? hindiGreeting : englishGreeting,
+            timestamp: new Date().toISOString(),
+          },
+        ];
+      }
+      // If guest has already engaged in a conversation, append a confirmation
+      return [
+        ...prev,
         {
-          id: 'greeting_hi',
+          id: `switch_${Date.now()}`,
           role: 'assistant',
-          content: `Namaste! ${hotelName} mein aapka swagat hai. Main Meena hoon, aapki personal guest concierge.\n\nMain aapki kya madad kar sakti hoon? Aap mujhse hotel suvidhaon, check-in samay, breakfast, cancellation policies, ya live room availability ke baare mein pooch sakte hain.`,
+          content:
+            language === 'hi'
+              ? `Main ab Hindi mein sahayata ke liye taiyar hoon! Kripya batayein main aapki kya madad kar sakti hoon?`
+              : `I am now ready to assist you in English! How may I help you today?`,
           timestamp: new Date().toISOString(),
         },
-      ]);
+      ];
+    });
+
+    if (isVoiceModeActive) {
+      voiceService.speak(
+        language === 'hi'
+          ? `Namaste! Main Meena hoon, main Hindi mein aapki kya madad kar sakti hoon?`
+          : `Hello, I am Meena, how can I assist you in English today?`,
+        language
+      );
     }
-  }, [language]);
+  }, [language, isMounted]);
 
   useEffect(() => {
     if (initialPrompt && conversationId) {
@@ -130,6 +160,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
           message: guestTurnText,
           conversationId,
           availabilityDetails,
+          language,
         }),
       });
 
@@ -290,23 +321,25 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
           <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
             <Globe size={13} color="var(--accent-gold)" />
             <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>Lang:</span>
-            {(['en', 'hi', 'hinglish'] as const).map((lng) => (
+            {(['en', 'hi'] as const).map((lng) => (
               <button
                 key={lng}
+                id={`btn-lang-${lng}`}
                 onClick={() => setLanguage(lng)}
                 style={{
-                  fontSize: '0.72rem',
-                  padding: '3px 9px',
+                  fontSize: '0.74rem',
+                  padding: '4px 11px',
                   borderRadius: 'var(--radius-full)',
                   background: language === lng ? 'var(--accent-gold)' : '#ffffff',
                   color: language === lng ? '#ffffff' : 'var(--text-secondary)',
                   border: language === lng ? 'none' : '1px solid var(--border-card)',
                   fontWeight: language === lng ? 700 : 500,
                   transition: 'all 0.2s ease',
+                  cursor: 'pointer',
                   boxShadow: 'var(--shadow-sm)',
                 }}
               >
-                {lng === 'en' ? 'English' : lng === 'hi' ? 'हिन्दी' : 'Hinglish'}
+                {lng === 'en' ? 'English' : 'हिन्दी'}
               </button>
             ))}
           </div>
@@ -430,6 +463,7 @@ export const ChatInterface: React.FC<ChatInterfaceProps> = ({
             <QuickQuestions
               onSelect={(q) => sendMessage(q)}
               disabled={isLoading}
+              language={language}
             />
           </div>
         )}

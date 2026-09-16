@@ -33,6 +33,7 @@ const ChatPayloadSchema = z.object({
       adults: z.number().int().min(1).max(8).optional(),
     })
     .optional(),
+  language: z.enum(['en', 'hi']).optional(),
 });
 
 export async function POST(req: NextRequest) {
@@ -63,7 +64,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json(errorResponse, { status: 400 });
     }
 
-    const { message, availabilityDetails } = parseResult.data;
+    const { message, availabilityDetails, language } = parseResult.data;
     conversationId = parseResult.data.conversationId || `conv_${Date.now()}_${Math.random().toString(36).substring(2, 8)}`;
 
     const session = conversationStore.getOrCreateSession(conversationId);
@@ -87,12 +88,14 @@ export async function POST(req: NextRequest) {
       provider: provider.name,
       isDemo: provider.isDemo,
       messageLength: message.length,
+      language,
     });
 
     const aiResult = await provider.processGuestMessage({
       message,
       conversationHistory: session.turns,
       pendingAvailability: session.pendingAvailability,
+      language,
     });
 
     // Update pending availability if AI extracted new fields

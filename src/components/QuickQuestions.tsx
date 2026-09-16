@@ -1,14 +1,15 @@
 'use client';
 
 import React from 'react';
-import { HelpCircle, Sparkles } from 'lucide-react';
+import { HelpCircle } from 'lucide-react';
 
 interface QuickQuestionsProps {
   onSelect: (question: string) => void;
   disabled?: boolean;
+  language?: 'en' | 'hi';
 }
 
-const SUGGESTIONS = [
+const SUGGESTIONS_EN = [
   'What time is check-in and check-out?',
   'Does the hotel have a swimming pool?',
   'Which room is suitable for three guests?',
@@ -17,7 +18,23 @@ const SUGGESTIONS = [
   'Check room availability',
 ];
 
-export const QuickQuestions: React.FC<QuickQuestionsProps> = ({ onSelect, disabled }) => {
+const SUGGESTIONS_HI = [
+  'चेक-इन और चेक-आउट का समय क्या है?',
+  'क्या होटल में स्विमिंग पूल है?',
+  '3 मेहमानों के लिए कौन सा कमरा सही रहेगा?',
+  'क्या नाश्ता (Breakfast) शामिल है?',
+  'होटल की कैंसिलेशन पॉलिसी क्या है?',
+  'कमरे की उपलब्धता चेक करें',
+];
+
+export const QuickQuestions: React.FC<QuickQuestionsProps> = ({
+  onSelect,
+  disabled,
+  language = 'en',
+}) => {
+  const suggestions = language === 'hi' ? SUGGESTIONS_HI : SUGGESTIONS_EN;
+  const heading = language === 'hi' ? 'मीना से तुरंत पूछें' : 'Quickly Ask Meena';
+
   return (
     <div style={{ marginTop: '16px', marginBottom: '8px' }}>
       <div
@@ -34,7 +51,7 @@ export const QuickQuestions: React.FC<QuickQuestionsProps> = ({ onSelect, disabl
         }}
       >
         <span>🌸</span>
-        <span>Quickly Ask Meena</span>
+        <span>{heading}</span>
       </div>
 
       <div
@@ -44,9 +61,9 @@ export const QuickQuestions: React.FC<QuickQuestionsProps> = ({ onSelect, disabl
           gap: '8px',
         }}
       >
-        {SUGGESTIONS.map((q, idx) => (
+        {suggestions.map((q, idx) => (
           <button
-            key={idx}
+            key={`${language}-${idx}`}
             id={`quick-question-${idx}`}
             onClick={() => onSelect(q)}
             disabled={disabled}

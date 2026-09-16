@@ -106,6 +106,7 @@ export interface ChatRequestPayload {
   message: string;
   conversationId?: string;
   availabilityDetails?: AvailabilityRequestDetails;
+  language?: 'en' | 'hi';
 }
 
 export interface ChatResponsePayload {

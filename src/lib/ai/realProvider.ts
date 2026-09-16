@@ -31,19 +31,22 @@ export class RealLLMProvider implements AIProvider {
     message,
     conversationHistory,
     pendingAvailability,
+    language,
   }: {
     message: string;
     conversationHistory: ConversationTurn[];
     pendingAvailability?: AvailabilityRequestDetails;
+    language?: 'en' | 'hi';
   }): Promise<AIProcessedResult> {
     const hotel = getHotelInfo();
     const facts = getAllFacts();
     const rooms = getAllRooms();
 
     // Construct strict grounding prompt
-    const systemPrompt = `You are the virtual guest assistant for ${hotel.name}.
+    let systemPrompt = `You are the virtual guest assistant for ${hotel.name}.
 Location: ${hotel.location.address}, ${hotel.location.city}, ${hotel.location.state}. Timezone: ${hotel.timezone}.
 Contact: ${hotel.contact.phone}, ${hotel.contact.email}.
+${language === 'hi' ? 'The guest prefers Hindi. Respond in polite, natural conversational Hindi.' : ''}
 
 CRITICAL RULES:
 1. Answer ONLY using the facts and room records provided below. DO NOT invent amenities, policies, pricing, or room features.

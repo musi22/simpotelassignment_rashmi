@@ -21,10 +21,12 @@ export class DemoProvider implements AIProvider {
     message,
     conversationHistory,
     pendingAvailability,
+    language,
   }: {
     message: string;
     conversationHistory: ConversationTurn[];
     pendingAvailability?: AvailabilityRequestDetails;
+    language?: 'en' | 'hi';
   }): Promise<AIProcessedResult> {
     const raw = message.trim();
     const lower = raw.toLowerCase();
@@ -44,15 +46,17 @@ export class DemoProvider implements AIProvider {
       };
     }
 
-    // Detect Hindi / Hinglish query intent with word boundaries
+    // Detect Hindi intent based on language toggle, Devanagari script, or keywords
     const isHindi =
-      /\b(kya|hai|hain|kitne|baje|kaun|shamil|nashta|samay|mehmaan|kamra|chahiye|milega|hoga|karein|swagat|namaste|batao|bataiye|chahiye)\b/i.test(
+      language === 'hi' ||
+      /[\u0900-\u097F]/.test(raw) ||
+      /\b(kya|hai|hain|kitne|baje|kaun|shamil|nashta|samay|mehmaan|kamra|chahiye|milega|hoga|karein|swagat|namaste|batao|bataiye|kripya|suvidha)\b/i.test(
         lower
       );
 
     // 2. Check for Availability Intent or Date Submissions
     const isAvailabilityQuery =
-      /availab|room\s+for|book|stay|rate|night|vacan|dates|uplabdh|milega|booking/i.test(lower) ||
+      /availab|room\s+for|book|stay|rate|night|vacan|dates|uplabdh|milega|booking|उपलब्ध|उपलब्धता|बुकिंग/i.test(lower) ||
       /\d{4}-\d{2}-\d{2}/.test(lower) ||
       pendingAvailability !== undefined;
 
@@ -241,7 +245,7 @@ export class DemoProvider implements AIProvider {
     // 5. Direct Question Matching (Hotel Facts)
 
     // Check-in / check-out
-    if (/check-in|check\s+in|checkout|check\s+out|arrival\s+time|departure\s+time|aane\s+ka\s+time|samay/i.test(lower)) {
+    if (/check-in|check\s+in|checkout|check\s+out|arrival\s+time|departure\s+time|aane\s+ka\s+time|samay|चेक-इन|चेकइन|चेकआउट|चेक-आउट|समय|आगमन|प्रस्थान/i.test(lower)) {
       const fact = getFactById('fact_checkin_checkout')!;
       const msg = isHindi
         ? `Namaste! Standard check-in time dopahar 3:00 PM PST hai aur check-out subah 11:00 AM PST hai. ${fact.details}`
@@ -254,7 +258,7 @@ export class DemoProvider implements AIProvider {
     }
 
     // Swimming pool / jacuzzi
-    if (/pool|swim|jacuzzi|hot\s+tub|tairna/i.test(lower)) {
+    if (/pool|swim|jacuzzi|hot\s+tub|tairna|स्विमिंग|पूल|जकूज़ी|तैरने/i.test(lower)) {
       const fact = getFactById('fact_pool')!;
       const msg = isHindi
         ? `Ji haan, The Grand Azure mein heated outdoor oceanfront infinity pool aur jacuzzi uplabdh hai jo subah 7:00 AM se raat 9:00 PM tak khula rehta hai. ${fact.details}`
@@ -267,7 +271,7 @@ export class DemoProvider implements AIProvider {
     }
 
     // Room suitability for three guests / adults
-    if (/three|3\s*(adults|guests|people|log|mehmaan)|suitab|which\s+room|teen\s+log/i.test(lower)) {
+    if (/three|3\s*(adults|guests|people|log|mehmaan)|suitab|which\s+room|teen\s+log|3\s*मेहमान|3\s*लोग|तीन|कमरा\s*सही|कौन\s*सा\s*कमरा/i.test(lower)) {
       const fact = getFactById('fact_room_suitability')!;
       const msg = isHindi
         ? `3 mehmaano ke liye sabse suitable options hain: Deluxe Double Queen (2 Queen beds, from $290/night) aur Executive Oceanfront Suite (1 King bed + luxury pull-out sofa, from $420/night). Deluxe King room mein maximum 2 adults allow hain.`
@@ -280,7 +284,7 @@ export class DemoProvider implements AIProvider {
     }
 
     // Breakfast inclusion
-    if (/breakfast|dining|brasserie|buffet|morning\s+meal|nashta|khana/i.test(lower)) {
+    if (/breakfast|dining|brasserie|buffet|morning\s+meal|nashta|khana|नाश्ता|ब्रेकफास्ट|खाना|भोजन/i.test(lower)) {
       const fact = getFactById('fact_breakfast_rules')!;
       const msg = isHindi
         ? `Breakfast inclusion room type par depend karta hai: Executive Suites aur Azure Penthouse Suite mein complimentary artisanal buffet breakfast included hai. Deluxe King aur Queen rooms mein breakfast by default included nahi hai, par aap ise $28 per adult per day mein add kar sakte hain.`
@@ -293,7 +297,7 @@ export class DemoProvider implements AIProvider {
     }
 
     // Cancellation policy
-    if (/cancel|cancellation|refund|modify\s+reservation|radd/i.test(lower)) {
+    if (/cancel|cancellation|refund|modify\s+reservation|radd|कैंसिलेशन|रद्द|वापसी/i.test(lower)) {
       const fact = getFactById('fact_cancellation_standard')!;
       const msg = isHindi
         ? `Cancellation Policy: Standard bookings ko check-in date ke 48 hours pehle tak bina kisi fee ke cancel kiya ja sakta hai. 48 hours ke andar cancel karne par 1 night room charge lagta hai.`

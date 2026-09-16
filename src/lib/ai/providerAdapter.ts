@@ -21,5 +21,6 @@ export interface AIProvider {
     message: string;
     conversationHistory: ConversationTurn[];
     pendingAvailability?: AvailabilityRequestDetails;
+    language?: 'en' | 'hi';
   }): Promise<AIProcessedResult>;
 }
