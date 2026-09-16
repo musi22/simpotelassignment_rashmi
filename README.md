@@ -274,7 +274,10 @@ simpotel/
 ├── docs/
 │   ├── ARCHITECTURE.md             # In-depth system design, boundaries, and data flow
 │   ├── EVALUATION.md               # 15 evaluated scenarios matrix with inputs & outcomes
-│   └── PRODUCT_NOTES.md            # Product reasoning, UX trade-offs, and metrics framework
+│   ├── PRODUCT_THINKING.md         # AI + Product thinking, guest journey & failure modes
+│   ├── PRODUCT_NOTES.md            # UX trade-offs, defensive design, and metrics framework
+│   ├── WALKTHROUGH.md              # Visual step-by-step gallery & video walkthrough
+│   └── media/                      # High-resolution screenshots and demo recording
 ├── src/
 │   ├── app/
 │   │   ├── api/
@@ -309,7 +312,11 @@ simpotel/
 │           └── guestJourney.spec.ts# Playwright browser end-to-end spec
 ```
 
-For detailed architectural diagrams and data flows, see [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+For in-depth explanations and visual journeys, see:
+- 🏛️ [**System Architecture & Data Flows**](docs/ARCHITECTURE.md)
+- 🧠 [**AI + Product Thinking Expectations**](docs/PRODUCT_THINKING.md)
+- 📸 [**Visual Step-by-Step Walkthrough & Video**](docs/WALKTHROUGH.md)
+- 📋 [**QA Scenario Evaluation Matrix**](docs/EVALUATION.md)
 
 ---
 
