@@ -38,6 +38,48 @@ A full-stack, 5-star hotel guest portal and intelligent virtual concierge applic
 
 ---
 
+## 📸 Visual Walkthrough & Step-by-Step Demo
+
+Experience the full guest journey across the resort web application and the interactive virtual concierge **Meena**:
+
+### Step 1: Luxury Resort Homepage & Oceanfront Hero
+The responsive luxury landing experience crafted in a blush pink, peach, and white palette with navigation anchors and instant concierge access.
+![Step 1 - Resort Homepage](docs/media/01_resort_homepage.png)
+
+### Step 2: High-Resolution Accommodations Showcase
+Displays all four room tiers with real photography, amenities, bedding specifications, and "Inquire with Meena" triggers.
+![Step 2 - Accommodations Gallery](docs/media/02_accommodations_gallery.png)
+
+### Step 3: World-Class Amenities & Dining
+Heated oceanfront infinity pool, fine coastal dining at Azure Brasserie, spa retreat, and valet compendium.
+![Step 3 - Amenities & Dining](docs/media/03_amenities_dining.png)
+
+### Step 4: Resort Footer with Social Links & Developer Credit
+Includes non-clickable verified social media links (Instagram, Facebook, TripAdvisor) and author attribution.
+![Step 4 - Footer and Social Links](docs/media/04_footer_social.png)
+
+### Step 5: Floating Concierge Launcher & Greeting Bubble
+A friendly speech bubble welcomes guests upon arrival: *"🌸 Meena • Guest Concierge: Hi, this is Meena! How could I help you today?"*.
+![Step 5 - Floating Concierge Launcher](docs/media/05_meena_floating_launcher.png)
+
+### Step 6: Concierge Window with Greeting & Language Options
+Interactive concierge window with welcome message in English & Hindi, quick suggestion pills, and voice input capability.
+![Step 6 - Meena Concierge Interface](docs/media/06_meena_concierge_welcome.png)
+
+### Step 7: Strictly Grounded Policy Verification
+Accurate, verified answer citing canonical check-in (3:00 PM PST) and check-out (11:00 AM PST) with server-side fact citation badge (`fact_checkin_checkout`).
+![Step 7 - Grounded Policy Answer](docs/media/07_grounded_policy_answer.png)
+
+### Step 8: Multi-Guest Room Suitability Recommendation
+Meena evaluates group size (3 guests), recommending the Deluxe Double Queen (2 beds) or Executive Suite (sofa bed), while disclaiming Deluxe King occupancy limits.
+![Step 8 - Room Suitability Recommendation](docs/media/08_room_suitability.png)
+
+### Step 9: Live Multi-Night Room Availability Cards
+Executes deterministic availability and pricing math for 3 nights with 14% tax breakdown, high-res bedroom photos, and mock disclosure.
+![Step 9 - Live Room Availability Cards](docs/media/09_live_availability_cards.png)
+
+---
+
 ## 🚀 Quickstart Guide
 
 ### Prerequisites
