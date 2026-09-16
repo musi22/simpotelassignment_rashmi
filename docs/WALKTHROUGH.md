@@ -1,7 +1,8 @@
 # Visual Walkthrough: The Grand Azure Resort & Spa
 
 **Developer:** Rashmi  
-**Application:** Hotel Guest Portal & Virtual Concierge ("Meena")
+**Application:** Hotel Guest Portal & Virtual Concierge ("Meena")  
+**🌐 Live Deployed URL:** [https://simpotel-two.vercel.app](https://simpotel-two.vercel.app)  
 
 This document details the step-by-step visual experience of the web application, showcasing the resort interface, the embedded virtual concierge, and the deterministic availability engine in action.
 
@@ -12,6 +13,9 @@ This document details the step-by-step visual experience of the web application,
 The following recording demonstrates the complete end-to-end guest journey:
 
 ![Demo Walkthrough Video](media/demo_walkthrough.webp)
+
+- **Direct File Link:** [docs/media/demo_walkthrough.webp](media/demo_walkthrough.webp) *(Full 8.1MB video)*
+- **Live Interactive Demo:** [https://simpotel-two.vercel.app](https://simpotel-two.vercel.app)
 
 ---
 

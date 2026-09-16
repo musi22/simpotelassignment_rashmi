@@ -1,9 +1,19 @@
 # 🏨 The Grand Azure Resort & Spa — Guest Portal & Virtual Concierge
 
 **Author & Developer:** Rashmi  
-**Tech Stack:** Next.js 14 (App Router), React 18, TypeScript, Deterministic Availability Engine, Web Speech API, Vanilla CSS Design System, Vitest, Playwright.
+**Tech Stack:** Next.js 14 (App Router), React 18, TypeScript, Deterministic Availability Engine, Web Speech API, Vanilla CSS Design System, Vitest, Playwright.  
+**🌐 Live Deployed URL:** [https://simpotel-two.vercel.app](https://simpotel-two.vercel.app)  
+**📹 Demo Video Walkthrough:** [docs/media/demo_walkthrough.webp](docs/media/demo_walkthrough.webp) *(Full 8.1MB walkthrough recording)*
 
 A full-stack, 5-star hotel guest portal and intelligent virtual concierge application designed for **The Grand Azure Resort & Spa** on Monterey Bay, California. The application pairs a luxury resort web experience with an interactive digital concierge that helps guests explore amenities, verify policies, evaluate room suitability, and check live mock availability with transparent pricing.
+
+---
+
+## 🚀 Live Demo & Recording Quick Links
+
+- **🌐 Live Production Deployment:** [https://simpotel-two.vercel.app](https://simpotel-two.vercel.app)
+- **📹 Screen Recording Walkthrough:** [docs/media/demo_walkthrough.webp](docs/media/demo_walkthrough.webp) *(Complete 8.1MB video recording demonstrating full guest flow, policy answers, multi-night availability, and voice)*
+- **📖 Step-by-Step Walkthrough Guide:** [docs/WALKTHROUGH.md](docs/WALKTHROUGH.md)
 
 ---
 
@@ -15,11 +25,12 @@ A full-stack, 5-star hotel guest portal and intelligent virtual concierge applic
   - *Deluxe Double Queen Room* (`/images/deluxe_queen.jpg`)
   - *Executive Oceanfront Suite* (`/images/exec_suite.jpg`)
   - *Azure Penthouse Suite* (`/images/penthouse.jpg`)
-- **Multilingual & Cultural Hospitality (English, हिन्दी, Hinglish)**:
+- **Multilingual & Cultural Hospitality (English, हिन्दी)**:
   - Built-in Indian hospitality greeting (*"Atithi Devo Bhava"*, Namaste).
-  - Understands and answers guest inquiries naturally in English, Hindi, and Hinglish (e.g. *"Check-in ka time kya hai?"*, *"3 logo ke liye kaun sa room sahi rahega?"*).
-- **Voice Interaction (Speech-to-Text)**:
-  - Integrated hands-free voice input via Web Speech API with live listening pulse animation.
+  - Understands and answers guest inquiries naturally in English and pure हिन्दी Devanagari (e.g. *"Check-in ka time kya hai?"*, *"चेक-इन का समय क्या है?"*, *"3 अतिथियों के लिए कौन सा कमरा उपयुक्त रहेगा?"*).
+- **Voice Interaction (Speech-to-Text & Text-to-Speech)**:
+  - Integrated hands-free voice input via Web Speech API with live listening pulse animation and microphone permission diagnostics.
+  - Spoken answers powered by speech synthesis with custom female pitch configuration.
 - **Official Resort Compendium & Property Directory**:
   - Interactive modal displaying the verified hotel handbook, policies, dining hours, and room capacity specifications.
 - **Strict Grounding & Zero Hallucination Guarantee**:
@@ -28,7 +39,7 @@ A full-stack, 5-star hotel guest portal and intelligent virtual concierge applic
   - Validates dates against hotel timezone (`America/Los_Angeles`).
   - Strict room occupancy enforcement (e.g. max adults per room).
   - Multi-night stay inventory validation against calendar blackout seeds.
-  - Computes exact prices (`nights * rate + 14% taxes & resort fees`) without calculation errors.
+  - Computes exact Indian Rupee tariffs (`nights * rate + 18% GST`) without calculation errors.
 - **Hybrid Conversational + Structured Date Picker**:
   - Automatically extracts dates and guest counts from natural conversation, while rendering an inline date/guest selector when fields are missing.
 - **Production-Ready Guardrails**:
@@ -41,6 +52,9 @@ A full-stack, 5-star hotel guest portal and intelligent virtual concierge applic
 ## 📸 Visual Walkthrough & Step-by-Step Demo
 
 Experience the full guest journey across the resort web application and the interactive virtual concierge **Meena**:
+
+### 📹 Full Screen Recording Walkthrough
+![Demo Walkthrough Recording](docs/media/demo_walkthrough.webp)
 
 ### Step 1: Luxury Resort Homepage & Oceanfront Hero
 The responsive luxury landing experience crafted in a blush pink, peach, and white palette with navigation anchors and instant concierge access.
