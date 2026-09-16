@@ -1,0 +1,165 @@
+{
+  "hotel": {
+    "id": "hotel_grand_azure",
+    "name": "The Grand Azure Resort & Spa",
+    "tagline": "Luxury Oceanfront Sanctuary on Monterey Bay",
+    "description": "An exclusive 5-star coastal retreat offering panoramic Pacific views, fine dining, world-class wellness, and personalized guest service.",
+    "location": {
+      "address": "700 Ocean Crest Way",
+      "city": "Monterey",
+      "state": "CA",
+      "zip": "93940",
+      "country": "United States"
+    },
+    "timezone": "America/Los_Angeles",
+    "contact": {
+      "phone": "+1 (831) 555-0199",
+      "email": "concierge@grandazureresort.com",
+      "frontDeskHours": "24/7"
+    }
+  },
+  "facts": [
+    {
+      "id": "fact_checkin_checkout",
+      "category": "schedule",
+      "title": "Check-in and Check-out Times",
+      "canonicalText": "Standard check-in time is 3:00 PM (15:00) PST. Check-out time is 11:00 AM PST.",
+      "details": "Early check-in from 12:00 PM and late check-out until 2:00 PM may be requested subject to room availability upon arrival. Express mobile check-out is available."
+    },
+    {
+      "id": "fact_pool",
+      "category": "amenities",
+      "title": "Swimming Pool & Jacuzzi",
+      "canonicalText": "The heated outdoor oceanfront infinity pool and saline jacuzzi are open daily from 7:00 AM to 9:00 PM.",
+      "details": "Complimentary poolside cabanas and towel service are available. For guest safety, children under 14 years of charge must be accompanied by an adult."
+    },
+    {
+      "id": "fact_breakfast_rules",
+      "category": "dining",
+      "title": "Breakfast Inclusions & Dining",
+      "canonicalText": "Breakfast inclusion depends on your room type: complimentary artisanal buffet breakfast at Azure Brasserie is included with Executive Suites and the Azure Penthouse Suite. For Deluxe King and Deluxe Queen rooms, breakfast is not included by default, but can be added for $28 per adult per day.",
+      "details": "Breakfast is served daily from 6:30 AM to 10:30 AM at the Azure Brasserie. Room service dining is also available with an additional 18% service fee."
+    },
+    {
+      "id": "fact_cancellation_standard",
+      "category": "policies",
+      "title": "Cancellation Policy",
+      "canonicalText": "Standard reservations can be cancelled or modified with no fee up to 48 hours prior to the 3:00 PM check-in date. Cancellations made within 48 hours of arrival incur a charge equal to 1 night's room rate plus applicable tax.",
+      "details": "Special promotional non-refundable rates cannot be cancelled or refunded after booking."
+    },
+    {
+      "id": "fact_room_suitability",
+      "category": "rooms",
+      "title": "Room Suitability and Capacity Guidelines",
+      "canonicalText": "Deluxe King accommodates up to 2 adults. Deluxe Double Queen accommodates up to 4 adults. Executive Oceanfront Suite accommodates up to 3 adults. Azure Penthouse accommodates up to 4 adults.",
+      "details": "For 3 guests, suitable options are the Deluxe Double Queen (2 Queen beds) or Executive Oceanfront Suite (1 King bed plus luxury pull-out sofa sleeper). The Deluxe King accommodates a maximum of 2 adults."
+    },
+    {
+      "id": "fact_parking",
+      "category": "amenities",
+      "title": "Parking & EV Charging",
+      "canonicalText": "Valet parking is available for $35 per night with 24/7 in-and-out privileges. Complimentary Level 2 Tesla and universal EV charging stations are available for registered overnight guests.",
+      "details": "Self-parking is not available on property due to resort layout."
+    },
+    {
+      "id": "fact_pets",
+      "category": "policies",
+      "title": "Pet Policy",
+      "canonicalText": "We welcome well-behaved dogs up to 30 lbs in designated pet-friendly ground-floor rooms. A one-time non-refundable deep cleaning fee of $75 per stay applies (maximum 2 dogs per room).",
+      "details": "Service animals as defined by the ADA are exempt from fees and weight restrictions. Pets must remain leashed in public areas and are not permitted in pool or spa zones."
+    },
+    {
+      "id": "fact_wifi",
+      "category": "amenities",
+      "title": "Internet & Connectivity",
+      "canonicalText": "Complimentary high-speed fiber Wi-Fi (up to 300 Mbps) is available throughout all guest rooms, suites, meeting spaces, and outdoor terraces.",
+      "details": "Premium gigabit ultra-bandwidth tier is complimentary for Executive Suite and Penthouse guests."
+    },
+    {
+      "id": "fact_fitness_spa",
+      "category": "amenities",
+      "title": "Fitness Center & Spa",
+      "canonicalText": "The 24-hour Fitness Center features Peloton bikes, Technogym equipment, and free weights, accessible via your digital room key. The Serenity Coastal Spa is open daily from 9:00 AM to 8:00 PM by appointment.",
+      "details": "Guests receive complimentary access to the steam room and sauna during Spa operating hours."
+    },
+    {
+      "id": "fact_luggage_storage",
+      "category": "services",
+      "title": "Luggage Storage & Baggage",
+      "canonicalText": "Complimentary secure luggage storage is available with the Bell Captain before check-in and after check-out on your arrival and departure dates.",
+      "details": "Temporary day-use shower facilities in the spa cabana area can also be requested for early arrivals or late departures."
+    },
+    {
+      "id": "fact_airport_shuttle",
+      "category": "transport",
+      "title": "Airport Transfers",
+      "canonicalText": "Private chauffeured airport transfers to/from Monterey Regional Airport (MRY) can be arranged with the Concierge for a flat rate of $50 each way with 24-hour advance reservation.",
+      "details": "Transfers to San Francisco International (SFO) or San Jose International (SJC) can be arranged upon private quote."
+    },
+    {
+      "id": "fact_quiet_hours",
+      "category": "policies",
+      "title": "Quiet Hours & Smoke-Free Policy",
+      "canonicalText": "Quiet hours are observed resort-wide from 10:00 PM to 7:00 AM daily. The Grand Azure is a 100% smoke-free and vape-free resort.",
+      "details": "A $350 deep-cleaning fee applies if smoking occurs in guest rooms or private balconies."
+    }
+  ],
+  "rooms": [
+    {
+      "id": "room_deluxe_king",
+      "name": "Deluxe King Room",
+      "description": "Spacious 420 sq ft room featuring an ultra-plush King bed, marble bathroom with rainfall shower, and private balcony with garden or partial coastal views.",
+      "image": "/images/deluxe_king.jpg",
+      "maxOccupancy": 2,
+      "bedding": "1 King Bed",
+      "sizeSqFt": 420,
+      "baseNightlyRate": 240,
+      "currency": "USD",
+      "breakfastIncluded": false,
+      "cancellationTier": "standard_48h",
+      "amenities": ["Private Balcony", "Rainfall Shower", "Nespresso Machine", "55-inch 4K TV", "High-Speed Wi-Fi"]
+    },
+    {
+      "id": "room_deluxe_queen",
+      "name": "Deluxe Double Queen Room",
+      "description": "Generous 480 sq ft room with two pillowtop Queen beds, double vanity marble bathroom, and patio. Perfectly designed for families or parties of 3 to 4 adults.",
+      "image": "/images/deluxe_queen.jpg",
+      "maxOccupancy": 4,
+      "bedding": "2 Queen Beds",
+      "sizeSqFt": 480,
+      "baseNightlyRate": 290,
+      "currency": "USD",
+      "breakfastIncluded": false,
+      "cancellationTier": "standard_48h",
+      "amenities": ["Double Vanity", "Private Patio", "Nespresso Machine", "Mini Fridge", "55-inch 4K TV", "High-Speed Wi-Fi"]
+    },
+    {
+      "id": "room_exec_suite",
+      "name": "Executive Oceanfront Suite",
+      "description": "Luxurious 720 sq ft suite featuring a private King bedroom, separate living room with queen sleeper sofa, deep soaking tub, and uninterrupted Pacific ocean vistas.",
+      "image": "/images/exec_suite.jpg",
+      "maxOccupancy": 3,
+      "bedding": "1 King Bed + 1 Queen Sleeper Sofa",
+      "sizeSqFt": 720,
+      "baseNightlyRate": 420,
+      "currency": "USD",
+      "breakfastIncluded": true,
+      "cancellationTier": "standard_48h",
+      "amenities": ["Oceanfront Panorama", "Complimentary Artisanal Breakfast", "Separate Living Salon", "Deep Soaking Tub", "VIP Concierge Service", "Wine Cooler"]
+    },
+    {
+      "id": "room_penthouse",
+      "name": "Azure Penthouse Suite",
+      "description": "Our signature 1,250 sq ft top-floor haven featuring two master King bedrooms, wraparound ocean-view terrace, fireplace, dining area, and dedicated butler service.",
+      "image": "/images/penthouse.jpg",
+      "maxOccupancy": 4,
+      "bedding": "2 King Bedrooms",
+      "sizeSqFt": 1250,
+      "baseNightlyRate": 750,
+      "currency": "USD",
+      "breakfastIncluded": true,
+      "cancellationTier": "standard_48h",
+      "amenities": ["Wraparound Terrace", "Complimentary Artisanal Breakfast", "Private Butler Service", "Fireplace", "Dining Room", "Complimentary Valet Parking"]
+    }
+  ]
+}
