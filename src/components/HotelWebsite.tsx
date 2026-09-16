@@ -607,7 +607,7 @@ export const HotelWebsite: React.FC<HotelWebsiteProps> = ({ onOpenAssistant }) =
                       fontFamily: 'var(--font-serif)',
                     }}
                   >
-                    ${room.baseNightlyRate}
+                    ₹{room.baseNightlyRate.toLocaleString('en-IN')}
                   </span>
                   <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginLeft: '4px' }}>
                     / night

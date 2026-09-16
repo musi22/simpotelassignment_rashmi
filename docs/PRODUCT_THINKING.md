@@ -12,7 +12,7 @@ This document provides in-depth product, architectural, and engineering reasonin
 ### The Problem
 When prospective or booked hotel guests visit a property website, they face high friction finding specific, decisive answers:
 - *"Does the Deluxe King accommodate my family of three?"*
-- *"Is breakfast included, or do I need to budget $30/person every morning?"*
+- *"Is breakfast included, or do I need to budget ₹1,500/person every morning?"*
 - *"Can I cancel without penalty if my travel plans change?"*
 - *"Are rooms available on my dates, and what is the exact total cost including resort fees and taxes?"*
 
@@ -83,8 +83,8 @@ To guarantee zero hallucinations while providing natural conversational interact
 | **Date Boundaries & Timezone Math** | **Deterministic** | Timezones (`America/Los_Angeles`) and calendar arithmetic must be mathematically exact to prevent invalid reservations. |
 | **Room Occupancy Constraints** | **Deterministic** | Violating capacity limits (e.g., booking 3 adults in a 2-guest room) violates fire and safety codes. Hardcoded rules enforce this strictly. |
 | **Multi-Night Inventory & Blackouts** | **Deterministic** | Inventory availability is binary across every night of a stay. Evaluated via database/calendar checks, never probabilistic guesswork. |
-| **Pricing & Tax Calculations** | **Deterministic** | Models make arithmetic errors. Room total must strictly equal `nights * baseRate + 14% taxes & resort fees`. |
-| **Canonical Hotel Policies** | **Deterministic** | Check-in hours (3:00 PM), cancellation deadlines (48 hrs), and breakfast costs ($28) are grounded in verified fact records. |
+| **Pricing & Tax Calculations** | **Deterministic** | Models make arithmetic errors. Room total must strictly equal `nights * baseRate + 18% GST`. |
+| **Canonical Hotel Policies** | **Deterministic** | Check-in hours (3:00 PM), cancellation deadlines (48 hrs), and breakfast costs (₹1,500) are grounded in verified fact records. |
 
 ---
 

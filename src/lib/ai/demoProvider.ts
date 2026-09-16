@@ -274,8 +274,8 @@ export class DemoProvider implements AIProvider {
     if (/three|3\s*(adults|guests|people|log|mehmaan)|suitab|which\s+room|teen\s+log|3\s*मेहमान|3\s*लोग|तीन|कमरा\s*सही|कौन\s*सा\s*कमरा/i.test(lower)) {
       const fact = getFactById('fact_room_suitability')!;
       const msg = isHindi
-        ? `3 mehmaano ke liye sabse suitable options hain: Deluxe Double Queen (2 Queen beds, from $290/night) aur Executive Oceanfront Suite (1 King bed + luxury pull-out sofa, from $420/night). Deluxe King room mein maximum 2 adults allow hain.`
-        : `${fact.details} Specifically, the Deluxe Double Queen (from $290/night) features 2 Queen beds, and the Executive Oceanfront Suite (from $420/night) includes 1 King bed plus a luxury Queen pull-out sleeper sofa. The Deluxe King room accommodates a maximum of 2 adults.`;
+        ? `3 mehmaano ke liye sabse suitable options hain: Deluxe Double Queen (2 Queen beds, from ₹22,000/night) aur Executive Oceanfront Suite (1 King bed + luxury pull-out sofa, from ₹32,000/night). Deluxe King room mein maximum 2 adults allow hain.`
+        : `${fact.details} Specifically, the Deluxe Double Queen (from ₹22,000/night) features 2 Queen beds, and the Executive Oceanfront Suite (from ₹32,000/night) includes 1 King bed plus a luxury Queen pull-out sleeper sofa. The Deluxe King room accommodates a maximum of 2 adults.`;
       return {
         responseType: 'answer',
         message: msg,
@@ -287,7 +287,7 @@ export class DemoProvider implements AIProvider {
     if (/breakfast|dining|brasserie|buffet|morning\s+meal|nashta|khana|नाश्ता|ब्रेकफास्ट|खाना|भोजन/i.test(lower)) {
       const fact = getFactById('fact_breakfast_rules')!;
       const msg = isHindi
-        ? `Breakfast inclusion room type par depend karta hai: Executive Suites aur Azure Penthouse Suite mein complimentary artisanal buffet breakfast included hai. Deluxe King aur Queen rooms mein breakfast by default included nahi hai, par aap ise $28 per adult per day mein add kar sakte hain.`
+        ? `Breakfast inclusion room type par depend karta hai: Executive Suites aur Azure Penthouse Suite mein complimentary artisanal buffet breakfast included hai. Deluxe King aur Queen rooms mein breakfast by default included nahi hai, par aap ise ₹1,500 per adult per day mein add kar sakte hain.`
         : `${fact.canonicalText} ${fact.details}`;
       return {
         responseType: 'answer',

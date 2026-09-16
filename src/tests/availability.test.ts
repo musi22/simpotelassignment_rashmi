@@ -18,12 +18,13 @@ describe('Deterministic Availability Engine', () => {
       expect(result.adults).toBe(2);
       expect(result.rooms.length).toBeGreaterThan(0);
 
-      // Verify deterministic pricing for Deluxe King ($240 * 3 nights = $720)
+      // Verify deterministic pricing for Deluxe King (₹18,000 * 3 nights = ₹54,000)
       const kingRoom = result.rooms.find((r) => r.roomId === 'room_deluxe_king');
       expect(kingRoom).toBeDefined();
-      expect(kingRoom?.totalBeforeTax).toBe(720);
-      expect(kingRoom?.estimatedTax).toBe(Math.round(720 * 0.14));
-      expect(kingRoom?.estimatedTotal).toBe(720 + Math.round(720 * 0.14));
+      expect(kingRoom?.currency).toBe('INR');
+      expect(kingRoom?.totalBeforeTax).toBe(54000);
+      expect(kingRoom?.estimatedTax).toBe(Math.round(54000 * 0.18));
+      expect(kingRoom?.estimatedTotal).toBe(54000 + Math.round(54000 * 0.18));
     }
   });
 

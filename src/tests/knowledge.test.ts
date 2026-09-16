@@ -58,7 +58,7 @@ describe('Hotel Knowledge Base and AI Logic', () => {
     expect(res.responseType).toBe('answer');
     expect(res.supportingFactIds).toContain('fact_breakfast_rules');
     expect(res.message).toContain('Executive Suites');
-    expect(res.message).toContain('$28 per adult per day');
+    expect(res.message).toContain('₹1,500 per adult per day');
   });
 
   it('5. politely handles unsupported assumptions and offers hotel contact details', async () => {

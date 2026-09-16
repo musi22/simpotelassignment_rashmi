@@ -5,7 +5,7 @@
 ### The Problem
 When prospective or booked hotel guests visit a property website, they seek quick answers to high-friction questions:
 - *"Does this room fit my family of three?"*
-- *"Is breakfast included, or do I need to budget $30 a day?"*
+- *"Is breakfast included, or do I need to budget ₹1,500 a day?"*
 - *"Can I cancel without penalty if my flight changes?"*
 - *"Are there rooms open for my anniversary weekend, and what will it actually cost?"*
 
@@ -46,7 +46,7 @@ A common mistake in AI assistants is forcing everything into free-form text.
 | **Room Capacity Constraints** | | ✅ | Violating occupancy codes (e.g. putting 3 adults in a 2-guest room) is a legal and liability issue. |
 | **Inventory Blackout Checks** | | ✅ | Real inventory is binary: a room is either available for every night of the stay or it is not. |
 | **Price Calculations & Taxes** | | ✅ | LLMs frequently make arithmetic errors; price must equal `nights * rate + taxes`. |
-| **Policy Canonical Values** | | ✅ | Exact numbers (3:00 PM check-in, 48h cancellation, $28 breakfast) must be strictly grounded. |
+| **Policy Canonical Values** | | ✅ | Exact numbers (3:00 PM check-in, 48h cancellation, ₹1,500 breakfast) must be strictly grounded. |
 
 ---
 

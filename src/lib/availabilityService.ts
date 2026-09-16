@@ -5,7 +5,7 @@ import { MOCK_INVENTORY_CONFIG } from '@data/mockInventory';
 import { AvailabilityServiceResult, RoomAvailabilityResult } from './types';
 
 const DATE_REGEX = /^\d{4}-\d{2}-\d{2}$/;
-const TAX_RATE = 0.14; // 14% occupancy tax & resort fee
+const TAX_RATE = 0.18; // 18% GST (Indian luxury hotel tariff rate)
 
 export function getHotelCurrentDate(): Date {
   const hotel = getHotelInfo();

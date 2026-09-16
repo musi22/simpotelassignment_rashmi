@@ -83,6 +83,6 @@ The following recording demonstrates the complete end-to-end guest journey:
 
 ### Step 9: Live Multi-Night Room Availability Cards
 - **Search:** *"Check availability from 2026-10-01 to 2026-10-04 for 2 adults"*
-- **Result:** Live availability cards with bedroom photo previews, base nightly rates, subtotal ($720), transparent 14% tax calculation ($101), total cost ($821), and mock disclaimer.
+- **Result:** Live availability cards with bedroom photo previews, base nightly rates, subtotal (₹54,000), transparent 18% GST calculation (₹9,720), total cost (₹63,720), and mock disclaimer.
 
 ![Step 9 - Live Room Availability Cards](media/09_live_availability_cards.png)

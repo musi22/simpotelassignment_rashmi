@@ -75,7 +75,7 @@ Meena evaluates group size (3 guests), recommending the Deluxe Double Queen (2 b
 ![Step 8 - Room Suitability Recommendation](docs/media/08_room_suitability.png)
 
 ### Step 9: Live Multi-Night Room Availability Cards
-Executes deterministic availability and pricing math for 3 nights with 14% tax breakdown, high-res bedroom photos, and mock disclosure.
+Executes deterministic availability and pricing math for 3 nights with 18% GST breakdown, high-res bedroom photos, and mock disclosure.
 ![Step 9 - Live Room Availability Cards](docs/media/09_live_availability_cards.png)
 
 ---
@@ -190,7 +190,7 @@ curl -X POST http://localhost:3000/api/chat \
 {
   "conversationId": "conv_1726425000_abc123",
   "responseType": "answer",
-  "message": "For 3 guests, suitable options are the Deluxe Double Queen (2 Queen beds) or Executive Oceanfront Suite (1 King bed plus luxury pull-out sofa sleeper). The Deluxe King accommodates a maximum of 2 adults. Specifically, the Deluxe Double Queen (from $290/night) features 2 Queen beds, and the Executive Oceanfront Suite (from $420/night) includes 1 King bed plus a luxury Queen pull-out sleeper sofa. The Deluxe King room accommodates a maximum of 2 adults.",
+  "message": "For 3 guests, suitable options are the Deluxe Double Queen (2 Queen beds) or Executive Oceanfront Suite (1 King bed plus luxury pull-out sofa sleeper). The Deluxe King accommodates a maximum of 2 adults. Specifically, the Deluxe Double Queen (from ₹22,000/night) features 2 Queen beds, and the Executive Oceanfront Suite (from ₹32,000/night) includes 1 King bed plus a luxury Queen pull-out sleeper sofa. The Deluxe King room accommodates a maximum of 2 adults.",
   "supportingFactIds": [
     "fact_room_suitability"
   ]
@@ -230,12 +230,12 @@ curl -X POST http://localhost:3000/api/chat \
       "bedding": "1 King Bed",
       "maxOccupancy": 2,
       "breakfastIncluded": false,
-      "baseNightlyRate": 240,
-      "currency": "USD",
+      "baseNightlyRate": 18000,
+      "currency": "INR",
       "nights": 3,
-      "totalBeforeTax": 720,
-      "estimatedTax": 101,
-      "estimatedTotal": 821,
+      "totalBeforeTax": 54000,
+      "estimatedTax": 9720,
+      "estimatedTotal": 63720,
       "amenities": ["Private Balcony", "Rainfall Shower", "Nespresso Machine", "55-inch 4K TV", "High-Speed Wi-Fi"],
       "disclaimer": "Illustrative mock availability & prices. No real reservation is confirmed."
     }

@@ -159,7 +159,7 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
                 border: '1px solid var(--border-card)',
               }}
             >
-              Breakfast optional ($28/adult/day)
+              Breakfast optional (₹1,500/adult/day)
             </span>
           )}
         </div>
@@ -207,7 +207,7 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
           }}
         >
           <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
-            ${room.baseNightlyRate} / night × {room.nights} night{room.nights > 1 ? 's' : ''}
+            ₹{room.baseNightlyRate.toLocaleString('en-IN')} / night × {room.nights} night{room.nights > 1 ? 's' : ''}
           </span>
           <div style={{ textAlign: 'right' }}>
             <span
@@ -218,7 +218,7 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
                 fontFamily: 'var(--font-serif)',
               }}
             >
-              ${room.estimatedTotal}
+              ₹{room.estimatedTotal.toLocaleString('en-IN')}
             </span>
             <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)', marginLeft: '4px' }}>
               {room.currency}
@@ -235,8 +235,8 @@ export const RoomCard: React.FC<RoomCardProps> = ({ room }) => {
             marginBottom: '8px',
           }}
         >
-          <span>Subtotal: ${room.totalBeforeTax}</span>
-          <span>Est. Taxes & Fees (14%): ${room.estimatedTax}</span>
+          <span>Subtotal: ₹{room.totalBeforeTax.toLocaleString('en-IN')}</span>
+          <span>Est. GST & Fees (18%): ₹{room.estimatedTax.toLocaleString('en-IN')}</span>
         </div>
 
         {/* Mock disclosure */}
